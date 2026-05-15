@@ -18,6 +18,7 @@ Network: Configured via VirtualBox using Bridged adapter to allow communication 
 
 3. Implementation Steps
 Phase 1: SIEM Deployment
+
 Server Preparation: Installed and updated Ubuntu Server.
 
 Wazuh Installation: Utilized the Wazuh installation assistant to deploy the indexer, server, and dashboard.
@@ -25,6 +26,7 @@ Wazuh Installation: Utilized the Wazuh installation assistant to deploy the inde
 Verification: Confirmed the web interface was accessible via the browser.
 
 Phase 2: Agent Enrollment
+
 Deployed the Wazuh Agent on the target endpoint.
 
 Modified the ossec.conf file to point to the Manager's IP address.
@@ -42,8 +44,9 @@ The Action: Attempted multiple failed logins from a remote machine to the monito
 The Detection: The Wazuh Manager analyzed the auth.log files and identified a pattern of failures.
 
 The "First Alert" Moment
+<img width="1920" height="1080" alt="Screenshot (58)" src="https://github.com/user-attachments/assets/fb179d3c-e28a-4c35-9532-51f3e162c905" />
 
-Caption: Figure 1.0 - Wazuh Dashboard displaying a Level 10 alert for a Brute Force attack.
+Wazuh Dashboard displaying a Level 10 alert for a Brute Force attack.
 
 Technical Analysis of the Alert:
 
@@ -52,9 +55,9 @@ Rule Triggered: 5712 (SSHD brute force trying to get access).
 Observation: The system correctly identified the source IP and the frequency of the attempts, providing immediate situational awareness.
 
 5. Challenges & Troubleshooting
-Connectivity: (Example: Initially, the agent could not reach the manager. I diagnosed this as a firewall issue and allowed traffic on port 1514/1515, which resolved the issue.)
+Connectivity: Initially, the agent could not reach the manager. I diagnosed this as a firewall issue and allowed traffic on port 1514/1515, which resolved the issue.
 
-Resource Management: (Example: Adjusted RAM allocation in VirtualBox to ensure the Wazuh Indexer had enough memory to process logs efficiently.)
+Resource Management: Adjusted RAM allocation in VirtualBox to ensure the Wazuh Indexer had enough memory to process logs efficiently.
 
 6. Conclusion & Future Roadmap
 This lab successfully demonstrated the power of centralized logging and real-time alerting.
